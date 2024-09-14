@@ -1,8 +1,8 @@
+import { Background } from "@/components/background";
+import { cn } from "@/lib/utils";
+import { inter, satoshi } from "@/styles/fonts";
+import "@/styles/globals.css";
 import type { Metadata } from "next";
-import { Gabarito } from "next/font/google";
-import "./globals.css";
-
-const inter = Gabarito({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Project Logica",
@@ -16,7 +16,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={cn(satoshi.variable, inter.variable)}>
+        <Background />
+        {children}
+      </body>
     </html>
   );
 }
